@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Todo</string>
+    <string name="addButton">add</string>
+    <string name="addText">Add a new item...</string>
+    <string name="title_activity_edit_item">Edit Item</string>
+    <string name="saveButton">Save</string>
+    <string name="editText">Edit Item Below:</string>
+    <string name="editItemHint">Item here</string>
+</resources>

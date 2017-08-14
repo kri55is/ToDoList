@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Simple_ToDo"
+        android:title="Simple Todo" />
+    <item android:id="@+id/EditItem"
+        android:title="Edit Item" />
+</menu>
