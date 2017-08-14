@@ -25,7 +25,6 @@ The following **optional** features are (not yet) implemented:
 
 The following **additional** features *could be* implemented:
 
-* [ ] Handle landscape orientation
 Customize style with:
 * [ ] splashscreen
 * [ ] original icon  
