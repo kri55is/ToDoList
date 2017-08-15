@@ -4,7 +4,7 @@
 
 Submitted by: Emilie Brisseau (github user: kri55is)
 
-Time spent: 4 hours spent in total
+Time spent: 6 hours spent in total
 
 ## User Stories
 
@@ -27,7 +27,8 @@ The following **additional** features *could be* implemented:
 
 Customize style with:
 * [ ] splashscreen
-* [ ] original icon  
+* [x] original icon  
+
 Have a way to tell the item has been done by one of the followinf solutions:
 * [ ] have a check button with every item in the list view
 * [ ] being able to "cross" an item by swiping it (as a user would do to cross a liine on a paper with a pen). The item would be displayed but striked through.
