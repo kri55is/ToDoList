@@ -29,11 +29,12 @@ Customize style with:
 * [ ] splashscreen
 * [x] original icon  
 
-Have a way to tell the item has been done by one of the followinf solutions:
+Have a way to tell the item has been done by one of the following solutions:
 * [ ] have a check button with every item in the list view
 * [ ] being able to "cross" an item by swiping it (as a user would do to cross a liine on a paper with a pen). The item would be displayed but striked through.
 
 * [ ] Being able to diplay or not the item that have been done 
+* [ ] Being able to rearrange items in the list with drag n'drop
 * [ ] Being able to create different kind of lists: work/personnal/...
 * [ ] Better handling of errors and exceptions
 * [ ] Better logging system using more TAGs with LogCat
