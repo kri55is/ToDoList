@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         File filesDir = getFilesDir();
         File file = new File(filesDir,"todo.txt");
         try{
-            todoItems = new ArrayList<String>(FileUtils.readLines(file));
+            todoItems = new ArrayList<>(FileUtils.readLines(file));
         }
         catch(IOException e){
         }
@@ -114,8 +114,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateArrayItems(){
         readItems();
-        aToDoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,todoItems);
-
+        if (todoItems == null){
+            todoItems =  new ArrayList<>();
+        }
+        aToDoAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,todoItems);
     }
 
     public void onAddItem(View view) {
