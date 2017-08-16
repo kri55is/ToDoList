@@ -62,11 +62,13 @@ Except the Android apps I already built in the past I have mostly wrote code wit
 
 **Question 2:** "Take a moment to reflect on the `ArrayAdapter` used in your pre-work. How would you describe an adapter in this context and what is its function in Android? Why do you think the adapter is important? Explain the purpose of the `convertView` in the `getView` method of the `ArrayAdapter`."
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:** The ArrayAdapter is in between a ListView and the data to be seen on the screen. In order to have a data displayed we need a view but there is no need to create a view for all the data if they are not always displayed. The adapter is ther for that: to create and handle the necessary views efficiently and populate them with the data. Then returning the view to the ListView.
+The convertView is very usefull to not create views that were already created, we give the old view as parameter so we don't create an un-necessary object.
 
 ## Notes
+I had to debug the app because it crashed only when it was launched the first time and we were trying to read items in an empty file. My list of items was null so I had to add checks on that.
 
-Describe any challenges encountered while building the app.
+I plan on adding more features :)
 
 ## License
 
