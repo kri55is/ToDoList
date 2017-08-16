@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 public class EditItemActivity extends AppCompatActivity {
 
+    private static final String TAG = "EditItemActivity";
+
     EditText mEditItemField;
     int mPositionItem = 0;
 
@@ -19,11 +21,15 @@ public class EditItemActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //get the information about the item and its id
         String textItem = getIntent().getStringExtra("textItem");
         mPositionItem = getIntent().getIntExtra("positionItem", -1);
 
         mEditItemField = (EditText) findViewById(R.id.editItemField);
-        mEditItemField.setText(textItem);
+
+        if (textItem != null) {
+            mEditItemField.setText(textItem);
+        }
         mEditItemField.requestFocus();
     }
 
@@ -31,9 +37,15 @@ public class EditItemActivity extends AppCompatActivity {
         Intent data = new Intent();
         String text =  mEditItemField.getEditableText().toString();
         data.putExtra("textItem",text);
-        data.putExtra("positionItem", mPositionItem);
+        //if  mPositionItem == -1 it's a problem as it's an index in an array
+        if (mPositionItem > -1) {
+            data.putExtra("positionItem", mPositionItem);
 
-        setResult(RESULT_OK, data);
+            setResult(RESULT_OK, data);
+        }
+        else {
+            setResult(RESULT_CANCELED);
+        }
         finish();
     }
 }
