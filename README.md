@@ -4,7 +4,7 @@
 
 Submitted by: Emilie Brisseau (github user: kri55is)
 
-Time spent: 6 hours spent in total
+Time spent: 7 hours spent in total
 
 ## User Stories
 
