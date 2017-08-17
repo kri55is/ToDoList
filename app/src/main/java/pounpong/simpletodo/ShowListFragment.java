@@ -13,11 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -37,9 +34,12 @@ public class ShowListFragment extends Fragment {
     EditText etEditText;
     Button btnAddItem;
 
+    TodoDatabaseHelper todoDatabaseHelper = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
 
@@ -71,7 +71,7 @@ public class ShowListFragment extends Fragment {
             try {
                 todoItems.remove(position);
                 aToDoAdapter.notifyDataSetChanged();
-                writeItems();
+                writeDBItems();
 
             }
             catch (Exception e){
@@ -111,7 +111,7 @@ public class ShowListFragment extends Fragment {
                     && textItem != null){
                 todoItems.set(positionItem, textItem);
                 aToDoAdapter.notifyDataSetChanged();
-                writeItems();
+                writeDBItems();
 
             }
         }
@@ -119,29 +119,24 @@ public class ShowListFragment extends Fragment {
             Log.d(TAG,"REQUEST CODE or/and RESULT CODE not good: REQUEST_CODE=" + REQUEST_CODE + "RESULT_OK =" + RESULT_OK);
         }
     }
-
-    public void readItems(){
-        File filesDir = getActivity().getApplicationContext().getFilesDir();
-        File file = new File(filesDir,"todo.txt");
-        try{
-            todoItems = new ArrayList<>(FileUtils.readLines(file));
-        }
-        catch(IOException e){
-        }
+    public void readDBItems() {
+        todoDatabaseHelper = TodoDatabaseHelper.getInstance(getActivity().getApplicationContext());
+        todoItems = todoDatabaseHelper.getAllItemsText();
     }
-    public void writeItems(){
-        File filesDir = getActivity().getApplicationContext().getFilesDir();
-        File file = new File(filesDir,"todo.txt");
-        try{
-            FileUtils.writeLines(file,todoItems);
-        }
-        catch(IOException e){
 
+    public void writeDBItems() {
+        todoDatabaseHelper = TodoDatabaseHelper.getInstance(getActivity().getApplicationContext());
+        todoDatabaseHelper.deleteAllItems();
+        for (Iterator<String> i = todoItems.iterator(); i.hasNext();){
+            String itemText = i.next();
+            TodoItem todoItem = new TodoItem(itemText);
+            todoDatabaseHelper.addTodoItem(todoItem);
         }
     }
 
     public void populateArrayItems(){
-        readItems();
+        readDBItems();
+        //readItems();
         if (todoItems == null){
             todoItems =  new ArrayList<>();
         }
@@ -153,7 +148,8 @@ public class ShowListFragment extends Fragment {
         {
             aToDoAdapter.add(etEditText.getText().toString());
             etEditText.setText("");
-            writeItems();
+            writeDBItems();
+
         }
     };
 
