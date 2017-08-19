@@ -4,7 +4,7 @@
 
 Submitted by: Emilie Brisseau (github user: kri55is)
 
-Time spent: 7 hours spent in total
+Time spent: 14 hours spent in total
 
 ## User Stories
 
@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are (not yet) implemented:
 
-* [ ] Persist the todo items [into SQLite](http://guides.codepath.com/android/Persisting-Data-to-the-Device#sqlite) instead of a text file
+* [x] Persist the todo items [into SQLite](http://guides.codepath.com/android/Persisting-Data-to-the-Device#sqlite) instead of a text file
 * [ ] Improve style of the todo items in the list [using a custom adapter](http://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView)
 * [ ] Add support for completion due dates for todo items (and display within listview item)
 * [ ] Use a [DialogFragment](http://guides.codepath.com/android/Using-DialogFragment) instead of new Activity for editing items
@@ -26,7 +26,7 @@ The following **optional** features are (not yet) implemented:
 The following **additional** features *could be* implemented:
 
 Customize style with:
-* [ ] splashscreen
+* [x] splashscreen
 * [x] original icon  
 
 Have a way to tell the item has been done by one of the following solutions:
@@ -44,7 +44,7 @@ Have a way to tell the item has been done by one of the following solutions:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/Uz4jY4Z.gif' width="600" />
+<img src='http://i.imgur.com/qURwgdi.gif' width="600" />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
