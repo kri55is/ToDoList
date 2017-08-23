@@ -67,7 +67,6 @@ The convertView is very usefull to not create views that were already created, w
 
 ## Notes
 I had to debug the app because it crashed only when it was launched the first time and we were trying to read items in an empty file. My list of items was null so I had to add checks on that.
-
 I plan on adding more features :)
 
 ## License
